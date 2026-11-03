@@ -14,6 +14,7 @@ public class StartWindow : GenericWindow
         continueButton.onClick.AddListener(OnClickContinue);
         newGameButton.onClick.AddListener(OnClickNewGame);
         optionButton.onClick.AddListener(OnClickOption);
+        // 이 코드와 Inspector에서 OnClick에추가하는거랑 같은거임
     }
     public override void Open()
     {
@@ -24,11 +25,11 @@ public class StartWindow : GenericWindow
 
     public void OnClickContinue()
     {
-        Debug.Log("OnClickContinue");
+        manager.Open(Windows.GameOver);
     }
     public void OnClickNewGame()
     {
-        Debug.Log("OnClickNewGame");
+        manager.Open(Windows.Keyboard);
     }
     public void OnClickOption()
     {

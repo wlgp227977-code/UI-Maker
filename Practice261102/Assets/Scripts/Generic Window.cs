@@ -6,6 +6,7 @@ public class GenericWindow : MonoBehaviour
     protected WindowManager manager;
     public GameObject firstSelected;
     private EventSystem eventSystem;
+
     protected virtual void Awake()
     {
         eventSystem = EventSystem.current;
