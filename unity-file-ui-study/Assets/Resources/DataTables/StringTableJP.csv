@@ -1,16 +1,40 @@
 Id,String
-HELLO,こんにちは
-BYE,さようなら
-YOU_DIE,あなたは死んだ
-ITEM_1_NAME,아이템 1 이름
-ITEM_2_NAME,아이템 2 이름
-ITEM_3_NAME,아이템 3 이름
-ITEM_4_NAME,아이템 4 이름
-ITEM_1_DESC,아이템 1 설명
-ITEM_2_DESC,아이템 2 설명
-ITEM_3_DESC,아이템 3 설명
-ITEM_4_DESC,아이템 4 설명
-CHAR_1_NAME,캐릭터 1 이름
-CHAR_2_NAME,캐릭터 2 이름
-CHAR_3_NAME,캐릭터 3 이름
-CHAR_4_NAME,캐릭터 4 이름
+HELLO,やあ
+BYE,じゃあな
+YOU_DIE,あなたは死ぬ
+ITEM_1_NAME,剣
+ITEM_2_NAME,盾
+ITEM_3_NAME,弓
+ITEM_4_NAME,ポーション
+ITEM_1_DESC,これは剣だ。
+ITEM_2_DESC,これは盾だ。
+ITEM_3_DESC,これは弓だ。
+ITEM_4_DESC,これはポーションだ。
+CHAR_1_NAME,戦士
+CHAR_2_NAME,弓使い
+CHAR_3_NAME,盗賊
+CHAR_4_NAME,聖騎士
+NAME,名前
+DESC,説明
+TYPE,タイプ
+VALUE,値
+COST,コスト
+WEAPON,武器
+EQUIP,装備
+CONSUMABLE,消費品
+LOAD,ロード
+SAVE,セーブ
+ITEM_CREATE,アイテム作成
+ITEM_DELETE,アイテム削除
+SORT,並び替え
+SORT_DATE_ASC,日付 (昇順)
+SORT_DATE_DESC,日付 (降順)
+SORT_NAME_ASC,名前 (昇順)
+SORT_NAME_DESC,名前 (降順)
+FILTER,フィルター
+FILTER_ALL,すべて
+FILTER_WEAPON,武器
+FILTER_EQUIP,装備
+FILTER_CONSUMABLE,消費品
+INVENTORY,インベントリー
+ITEM_INFO,アイテム情報

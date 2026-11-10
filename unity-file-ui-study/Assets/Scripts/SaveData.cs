@@ -1,4 +1,5 @@
-using Unity.VisualScripting;
+using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 
 public abstract class SaveData
@@ -7,60 +8,77 @@ public abstract class SaveData
     public abstract SaveData VersionUp();
 }
 
-public class SaveDataV4 : SaveData
+public class SaveDataV5 : SaveData
 {
-    public string FirstName { get; set; }
-    public string SecondName { get; set; }
+    public string FirstName { get; set; } = string.Empty;
+    public string LastName { get; set; } = string.Empty;
     public int Gold { get; set; } = 100;
-    public string PlayerName
+    public List<SaveItemData> ItemList = new List<SaveItemData>();
+
+    public SaveDataV5()
     {
-        get
-        {
-            return FirstName + " " + SecondName;
-        }
-        set
-        {
-            string[] names = value.Split(' ');
-            FirstName = names[0];
-            SecondName = names[1];
-        }
+        Version = 5;
     }
-    public SaveDataV4()
-    {
-        Version = 4;
-    }
+
     public override SaveData VersionUp()
     {
         throw new System.NotImplementedException();
     }
 }
 
-public class SaveDataV3 : SaveData      // SaveDataV2를 부모로 상속받아도 됨
+public class SaveDataV4 : SaveData
 {
-    public string PlayerName { get; set; } = string.Empty;
-    public int Exp { get; set; } = 1000;
+    public string FirstName { get; set; } = string.Empty;
+    public string LastName { get; set; } = string.Empty;
     public int Gold { get; set; } = 100;
-    public SaveDataV3()
+
+    public SaveDataV4()
     {
-        Version = 3;
+        Version = 4;
     }
+
     public override SaveData VersionUp()
     {
-
-        var data = new SaveDataV4();
-        data.PlayerName = PlayerName;
+        var data = new SaveDataV5();
+        data.FirstName = FirstName;
+        data.LastName = LastName;
         data.Gold = Gold;
         return data;
     }
 }
+
+public class SaveDataV3 : SaveData
+{
+    public string PlayerName { get; set; } = string.Empty;
+    public int Gold { get; set; } = 100;
+    public int Exp { get; set; } = 0;
+
+    public SaveDataV3()
+    {
+        Version = 3;
+    }
+
+    public override SaveData VersionUp()
+    {
+        var data = new SaveDataV4();
+        string[] parts = PlayerName.Split(" ");
+        data.FirstName = parts[0];
+        data.LastName = parts[1];
+        data.Gold = Gold;
+        return data;
+    }
+}
+
 public class SaveDataV2 : SaveData
 {
     public string PlayerName { get; set; } = string.Empty;
     public int Gold { get; set; } = 100;
+
     public SaveDataV2()
     {
         Version = 2;
     }
+
     public override SaveData VersionUp()
     {
         var data = new SaveDataV3();
@@ -73,10 +91,12 @@ public class SaveDataV2 : SaveData
 public class SaveDataV1 : SaveData
 {
     public string PlayerName { get; set; } = string.Empty;
+
     public SaveDataV1()
     {
         Version = 1;
     }
+
     public override SaveData VersionUp()
     {
         var data = new SaveDataV2();
