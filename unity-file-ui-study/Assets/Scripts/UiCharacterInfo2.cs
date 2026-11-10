@@ -15,6 +15,7 @@ public class UiCharacterInfo2 : MonoBehaviour
     public void SetEmpty()
     {
         icon.sprite = null;
+        icon.enabled = false;
         textName.text = string.Empty;
         textHP.text = string.Empty;
         textAtk.text = string.Empty;
@@ -22,14 +23,22 @@ public class UiCharacterInfo2 : MonoBehaviour
         textSpeed.text = string.Empty;
     }
 
-    public void SetCharacter()
+    public void SetCharacter(SaveCharacterData saveCharacterData)
     {
-        icon.sprite = null;
-        textName.text = string.Empty;
-        textHP.text = string.Empty;
-        textAtk.text = string.Empty;
-        textDef.text = string.Empty;
-        textSpeed.text = string.Empty;
+        Debug.Log($"textHP: {textHP}");
+        Debug.Log($"textAtk: {textAtk}");
+        Debug.Log($"textDef: {textDef}");
+        Debug.Log($"textSpeed: {textSpeed}");
+
+        var st = DataTableManager.StringTable;
+        var data = saveCharacterData.CharacterData;
+        icon.sprite = saveCharacterData.CharacterData.SpriteIcon;
+        icon.enabled = true;
+        textName.text = string.Format(FormatString, st.Get("NAME"), data.StringName);
+        textHP.text = string.Format(FormatString, st.Get("Hp"), data.Hp);
+        textAtk.text = string.Format(FormatString, st.Get("Atk"), data.Atk);
+        textDef.text = string.Format(FormatString, st.Get("Def"), data.Def);
+        textSpeed.text = string.Format(FormatString, st.Get("Speed"), data.Speed);
     }
 
 }

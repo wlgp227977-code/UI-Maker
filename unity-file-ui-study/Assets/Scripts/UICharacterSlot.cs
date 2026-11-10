@@ -4,7 +4,7 @@ using TMPro;
 
 public class UICharacterSlot : MonoBehaviour
 {
-    public int SlotIndex = -1;
+    public int SlotIndex { get; set; } = -1;
     public Button button;
     public Image icon;
     public TMP_Text textCharacterName;
@@ -19,8 +19,8 @@ public class UICharacterSlot : MonoBehaviour
     public void SetCharacter(SaveCharacterData data)
     {
         CharacterData = data;
-        icon.sprite = CharacterData.characterData.SpriteIcon;
-        textCharacterName.text = CharacterData.characterData.StringName;
+        icon.sprite = CharacterData.CharacterData.SpriteIcon;
+        textCharacterName.text = CharacterData.CharacterData.StringName;
     }
 
 }

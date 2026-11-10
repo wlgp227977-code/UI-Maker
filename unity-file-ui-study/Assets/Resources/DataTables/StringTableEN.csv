@@ -38,3 +38,7 @@ FILTER_EQUIP,Equipment
 FILTER_CONSUMABLE,Consumable
 INVENTORY,Inventory
 ITEM_INFO,Item Info
+Hp,Hp
+Atk,Atk
+Def,Def
+Speed,Speed

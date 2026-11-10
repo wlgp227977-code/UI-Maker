@@ -7,7 +7,7 @@ public class SaveCharacterData
     public Guid InstanceId { get; set; }
 
     [JsonConverter(typeof(CharacterConverter))]
-    public CharacterData characterData { get; set; }
+    public CharacterData CharacterData { get; set; }
     public DateTime CreationTime { get; set; }
 
     public SaveCharacterData()
@@ -18,12 +18,12 @@ public class SaveCharacterData
 
     public override string ToString()
     {
-        return $"{InstanceId} {characterData.Id} : (${CreationTime})";
+        return $"{InstanceId} {CharacterData.Id} : (${CreationTime})";
     }
     public static SaveCharacterData GetRandomCharacter()
     {
         var newCharacter = new SaveCharacterData();
-        newCharacter.characterData = DataTableManager.CharacterTable.GetRandom();
+        newCharacter.CharacterData = DataTableManager.CharacterTable.GetRandom();
         return newCharacter;
     }
 

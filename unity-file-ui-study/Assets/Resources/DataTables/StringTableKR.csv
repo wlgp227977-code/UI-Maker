@@ -38,3 +38,7 @@ FILTER_EQUIP,장비
 FILTER_CONSUMABLE,소모품
 INVENTORY,인벤토리
 ITEM_INFO,아이템 정보
+Hp,체력
+Atk,공격
+Def,방어
+Speed,속도

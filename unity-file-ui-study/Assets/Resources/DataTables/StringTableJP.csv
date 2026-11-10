@@ -38,3 +38,7 @@ FILTER_EQUIP,装備
 FILTER_CONSUMABLE,消費品
 INVENTORY,インベントリー
 ITEM_INFO,アイテム情報
+Hp,たいりょく
+Atk,こうげき
+Def,ふせぐ
+Speed,そくど

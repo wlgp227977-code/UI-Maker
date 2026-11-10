@@ -14,6 +14,7 @@ public class SaveDataV5 : SaveData
     public string LastName { get; set; } = string.Empty;
     public int Gold { get; set; } = 100;
     public List<SaveItemData> ItemList = new List<SaveItemData>();
+    public List<SaveCharacterData> CharacterList = new List<SaveCharacterData>();
 
     public SaveDataV5()
     {

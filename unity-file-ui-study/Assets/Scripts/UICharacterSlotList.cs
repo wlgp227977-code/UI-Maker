@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -8,25 +7,32 @@ public class UICharacterSlotList : MonoBehaviour
 {
     public enum SortingOptions
     {
-        CreationItemAsscending,
-        CreationItemDesscending,
+        CreationCharacterAsscending,
+        CreationCharacterDesscending,
         NameAsscending,
         NameDesscending
     }
-    public enum FilteringOptions
-    {
-        None,
-        Weapon,
-        Equip,
-        Consumable,
-    }
+    
     public readonly System.Comparison<SaveCharacterData>[] comparisons =
     {
         (lhs, rhs) => lhs.CreationTime.CompareTo(rhs.CreationTime),
         (lhs, rhs) => rhs.CreationTime.CompareTo(lhs.CreationTime),
-        (lhs, rhs) => lhs.characterData.StringName.CompareTo(rhs.characterData.StringName),
-        (lhs, rhs) => rhs.characterData.StringName.CompareTo(lhs.characterData.StringName),
+        (lhs, rhs) => lhs.CharacterData.StringName.CompareTo(rhs.CharacterData.StringName),
+        (lhs, rhs) => rhs.CharacterData.StringName.CompareTo(lhs.CharacterData.StringName),
     };
+    private SortingOptions sorting = SortingOptions.CreationCharacterAsscending;
+    public SortingOptions Sorting
+    {
+        get => sorting;
+        set
+        {
+            if (sorting != value)
+            {
+                sorting = value;
+                UpdateSlot();
+            }
+        }
+    }
 
     private int selectedSlot = -1;
     public UnityEvent OnUpdateSlots;
@@ -41,9 +47,14 @@ public class UICharacterSlotList : MonoBehaviour
         saveCharacterDataList = new List<SaveCharacterData>(source);
 
     }
+    public List<SaveCharacterData> GetSaveCharacterDataList()
+    {
+        return saveCharacterDataList;
+    }
     private void UpdateSlot()
     {
         var list = saveCharacterDataList;
+        list.Sort(comparisons[(int)sorting]);  
         if (uiSlotList.Count < list.Count)
         {
             for (int i = uiSlotList.Count; i < list.Count; i++)
@@ -78,6 +89,20 @@ public class UICharacterSlotList : MonoBehaviour
             }
         }
 
+    }
+    public void AddRandomCharacter()
+    {
+        saveCharacterDataList.Add(SaveCharacterData.GetRandomCharacter());
+        UpdateSlot();
+    }
+    public void RemoveCharacter()
+    {
+        if (selectedSlot == -1)
+        {
+            return;
+        }
+        saveCharacterDataList.Remove(uiSlotList[selectedSlot].CharacterData);
+        UpdateSlot();
     }
 
 }
