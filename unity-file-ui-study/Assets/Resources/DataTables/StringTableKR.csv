@@ -42,3 +42,5 @@ Hp,체력
 Atk,공격
 Def,방어
 Speed,속도
+CHARACTER_LIST,캐릭터 목록
+CHARACTER_INFO,캐릭터 정보

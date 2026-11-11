@@ -2364,7 +2364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5303127331556649245, guid: 168d5e46701222c41b6d8a7a54cf0e52, type: 3}
       propertyPath: m_text
-      value: Charater List
+      value: "\uD0A4 \uC5C6\uC74C"
       objectReference: {fileID: 0}
     - target: {fileID: 5303127331556649245, guid: 168d5e46701222c41b6d8a7a54cf0e52, type: 3}
       propertyPath: m_fontSize
@@ -2405,13 +2405,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4580535071304558676, guid: 168d5e46701222c41b6d8a7a54cf0e52, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1130561231}
   m_SourcePrefab: {fileID: 100100000, guid: 168d5e46701222c41b6d8a7a54cf0e52, type: 3}
 --- !u!224 &1130561229 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1549337183169913393, guid: 168d5e46701222c41b6d8a7a54cf0e52, type: 3}
   m_PrefabInstance: {fileID: 1130561228}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1130561230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4580535071304558676, guid: 168d5e46701222c41b6d8a7a54cf0e52, type: 3}
+  m_PrefabInstance: {fileID: 1130561228}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1130561231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130561230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88169717e600de4f997db1c6d696c08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationText
+  stringId: CHARACTER_LIST
+  editorLang: 0
 --- !u!1 &1159575790
 GameObject:
   m_ObjectHideFlags: 0
@@ -3352,7 +3374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5303127331556649245, guid: 168d5e46701222c41b6d8a7a54cf0e52, type: 3}
       propertyPath: m_text
-      value: Character Info
+      value: "\uD0A4 \uC5C6\uC74C"
       objectReference: {fileID: 0}
     - target: {fileID: 5303127331556649245, guid: 168d5e46701222c41b6d8a7a54cf0e52, type: 3}
       propertyPath: m_fontSize
@@ -3393,8 +3415,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4580535071304558676, guid: 168d5e46701222c41b6d8a7a54cf0e52, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1564328537}
   m_SourcePrefab: {fileID: 100100000, guid: 168d5e46701222c41b6d8a7a54cf0e52, type: 3}
+--- !u!1 &1564328536 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4580535071304558676, guid: 168d5e46701222c41b6d8a7a54cf0e52, type: 3}
+  m_PrefabInstance: {fileID: 1564328535}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1564328537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564328536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a88169717e600de4f997db1c6d696c08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationText
+  stringId: CHARACTER_LIST
+  editorLang: 0
 --- !u!1001 &1587149485
 PrefabInstance:
   m_ObjectHideFlags: 0

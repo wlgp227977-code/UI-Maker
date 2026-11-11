@@ -25,11 +25,6 @@ public class UiCharacterInfo2 : MonoBehaviour
 
     public void SetCharacter(SaveCharacterData saveCharacterData)
     {
-        Debug.Log($"textHP: {textHP}");
-        Debug.Log($"textAtk: {textAtk}");
-        Debug.Log($"textDef: {textDef}");
-        Debug.Log($"textSpeed: {textSpeed}");
-
         var st = DataTableManager.StringTable;
         var data = saveCharacterData.CharacterData;
         icon.sprite = saveCharacterData.CharacterData.SpriteIcon;
